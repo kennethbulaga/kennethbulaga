@@ -108,20 +108,21 @@ export function Hero() {
             </p>
             <div className="flex items-center gap-4">
               <a 
-                href="https://www.sjp2cd.edu.ph" 
+                href="https://www.facebook.com/sjp2cdofficial" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
+                className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
               >
-                <div className="relative w-8 h-8 rounded-full overflow-hidden bg-muted">
+                <div className="relative w-9 h-9 rounded-full overflow-hidden bg-background border border-border">
                   <Image
                     src="/logos/school-logo-nobg.png"
                     alt="St. John Paul II College of Davao"
                     fill
-                    className="object-cover"
+                    sizes="36px"
+                    className="object-contain p-0.5"
                   />
                 </div>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                   St. John Paul II College of Davao
                 </span>
               </a>
