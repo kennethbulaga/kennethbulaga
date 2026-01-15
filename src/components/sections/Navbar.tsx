@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { navItems, personalInfo, resumePath } from "@/data/portfolio";
@@ -34,7 +34,7 @@ export function Navbar() {
           {/* Logo / Name */}
           <Link
             href="/"
-            className="font-semibold text-lg text-foreground hover:text-primary transition-colors"
+            className="font-semibold text-2xl text-foreground hover:text-primary transition-colors font-fungela uppercase tracking-wide"
           >
             {personalInfo.nickname}
           </Link>
@@ -51,9 +51,22 @@ export function Navbar() {
               </Link>
             ))}
             <ThemeToggle />
-            <Button asChild size="sm" className="ml-2">
+            {/* View Resume (Primary) */}
+            <Button asChild size="sm" variant="default" className="ml-2 gap-1.5">
               <a href={resumePath} target="_blank" rel="noopener noreferrer">
+                <Eye size={16} />
                 Resume
+              </a>
+            </Button>
+            {/* Download Resume (Secondary) */}
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="gap-1.5"
+            >
+              <a href={resumePath} download="KennethBulaga_FullStackDev_Jan2026.pdf" rel="noopener noreferrer">
+                <Download size={16} />
               </a>
             </Button>
           </div>
@@ -85,11 +98,20 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Button asChild size="sm" className="mt-2">
-                <a href={resumePath} target="_blank" rel="noopener noreferrer">
-                  Resume
-                </a>
-              </Button>
+              {/* Mobile Resume Buttons */}
+              <div className="flex gap-2 mt-2">
+                <Button asChild size="sm" variant="default" className="flex-1 gap-1.5">
+                  <a href={resumePath} target="_blank" rel="noopener noreferrer">
+                    <Eye size={16} />
+                    View Resume
+                  </a>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="gap-1.5">
+                  <a href={resumePath} download="KennethBulaga_FullStackDev_Jan2026.pdf" rel="noopener noreferrer">
+                    <Download size={16} />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         )}

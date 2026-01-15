@@ -27,6 +27,7 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
+      className="active:scale-95 transition-all"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}

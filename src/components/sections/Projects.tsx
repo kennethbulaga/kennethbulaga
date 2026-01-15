@@ -34,16 +34,12 @@ export function Projects() {
             Projects
           </h2>
           <p className="text-muted-foreground">
-            Flagship systems and client work that showcase my approach to
-            building scalable, accessible solutions.
+            Scalable systems and client solutions that demonstrate technical architecture and institutional impact.
           </p>
         </motion.div>
 
         {/* Flagship Projects */}
-        <div className="space-y-8 mb-16">
-          <h3 className="text-lg font-semibold text-foreground">
-            Flagship Projects
-          </h3>
+        <div className="mb-16">
           <motion.div
             className="grid gap-6"
             variants={staggerContainer}
@@ -118,10 +114,7 @@ export function Projects() {
         </div>
 
         {/* Client Projects */}
-        <div className="space-y-8">
-          <h3 className="text-lg font-semibold text-foreground">
-            Client Projects
-          </h3>
+        <div>
           <motion.div
             className="grid gap-4"
             variants={staggerContainer}

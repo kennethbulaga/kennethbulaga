@@ -1,4 +1,4 @@
-import { Navbar, Hero, Projects, Education, Footer } from "@/components/sections";
+import { Navbar, Hero, Projects, Experience, Education, Footer } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <main className="min-h-screen">
         <Hero />
         <Projects />
+        <Experience />
         <Education />
         <Footer />
       </main>

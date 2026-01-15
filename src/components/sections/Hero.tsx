@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Mail, Download } from "lucide-react";
+import { MapPin, Mail, Download, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -86,8 +86,9 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* CTA Button */}
-          <motion.div variants={staggerItem} className="pt-4">
+          {/* CTA Buttons - View & Download */}
+          <motion.div variants={staggerItem} className="pt-4 flex flex-wrap gap-3">
+            {/* Primary: View Resume */}
             <Button asChild size="lg">
               <a
                 href={resumePath}
@@ -95,8 +96,20 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="gap-2"
               >
+                <Eye size={18} />
+                View Resume
+              </a>
+            </Button>
+            {/* Secondary: Download */}
+            <Button asChild size="lg" variant="outline">
+              <a
+                href={resumePath}
+                download="KennethBulaga_FullStackDev_Jan2026.pdf"
+                rel="noopener noreferrer"
+                className="gap-2"
+              >
                 <Download size={18} />
-                Download Resume
+                Download
               </a>
             </Button>
           </motion.div>

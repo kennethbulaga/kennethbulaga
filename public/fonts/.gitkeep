@@ -1,0 +1,42 @@
+# Custom Fonts Directory
+
+Place your custom font files here.
+
+## Supported Formats
+- .woff2 (recommended - best compression)
+- .woff (fallback for older browsers)
+- .ttf / .otf (not recommended for web, use woff2 instead)
+
+## Example Structure
+```
+public/fonts/
+├── MyCustomFont-Regular.woff2
+├── MyCustomFont-Bold.woff2
+├── MyCustomFont-Italic.woff2
+└── MyCustomFont-BoldItalic.woff2
+```
+
+## Usage
+After adding fonts here, import them in src/app/layout.tsx using Next.js localFont:
+
+```tsx
+import localFont from 'next/font/local';
+
+const myFont = localFont({
+  src: [
+    {
+      path: '../public/fonts/MyCustomFont-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/MyCustomFont-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-my-custom',
+});
+```
+
+Then add the variable to your body className in layout.tsx.

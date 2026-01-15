@@ -54,6 +54,16 @@ export interface Leadership {
   isCurrent?: boolean;
 }
 
+export interface Experience {
+  organization: string;
+  role: string;
+  period: string;
+  description?: string;
+  logo?: string;
+  link?: string;
+  isCurrent?: boolean;
+}
+
 export interface TechStack {
   primary: string[];
   secondary: string[];
@@ -77,13 +87,13 @@ export const personalInfo: PersonalInfo = {
   name: "Kenneth Bulaga",
   nickname: "Kenzo",
   headline: "Hi, I'm Kenneth Bulaga.",
-  subHeadline: "4th-Year BSIT Student & Freelance Developer.",
-  bio: "Building accessible and scalable institutional systems. Currently serving as an SSC Senator and architecting centralized student service platforms deployed at St. John Paul II College of Davao.",
+  subHeadline: "4th-Year BSIT Student & Full-Stack Developer.",
+  bio: "Building accessible and scalable institutional systems. Currently serving as an SSC Senator and architecting centralized student service platforms for the St. John Paul II College of Davao ecosystem.",
   location: "Based in Davao City, Philippines.",
   email: "kennethbulaga.dev@gmail.com",
   availability: {
     status: "available",
-    message: "Open to freelance projects",
+    message: "Open to opportunities",
   },
 };
 
@@ -172,7 +182,7 @@ export const education: EducationItem[] = [
     level: "College",
     institution: "St. John Paul II College of Davao",
     program: "Bachelor of Science in Information Technology",
-    status: "Currently taking OJT • Expected Graduation: 2026",
+    status: "Internship in Progress • Expected Graduation: 2026",
     logo: "/logos/school-logo-nobg.png",
     isCurrent: true,
   },
@@ -182,16 +192,6 @@ export const education: EducationItem[] = [
     program: "STEM Strand",
     logo: "/logos/school-logo-nobg.png",
   },
-  {
-    level: "High School",
-    institution: "Jesus J. Soriano National High School",
-    logo: "/logos/high-school.jpg",
-  },
-  {
-    level: "Elementary",
-    institution: "Catalunan Grande Elementary School",
-    logo: "/logos/elementary.jpg",
-  },
 ];
 
 // Leadership
@@ -199,7 +199,7 @@ export const education: EducationItem[] = [
 export const leadership: Leadership[] = [
   {
     organization: "Supreme Student Council (SSC)",
-    role: "Senator - Social Media Creatives Co-Chairperson",
+    role: "Senator | Co-Chair, Social Media Creatives",
     period: "2025–Present",
     logo: "/logos/ssc-logo.jpg",
     link: "https://www.facebook.com/sjp2cdSSC",
@@ -214,17 +214,29 @@ export const leadership: Leadership[] = [
   },
   {
     organization: "JP Chronicles",
-    role: "Social Media Manager",
+    role: "Platform Manager",
     period: "2024–2025",
     logo: "/logos/JPCHRONS.png",
     link: "https://www.facebook.com/JPchrons",
   },
   {
     organization: "SJPIICD ELITES (ICT)",
-    role: "Senator - Communications Chairperson",
+    role: "Senator | Chair, Communications",
     period: "2024–2025",
     logo: "/logos/ELITES.jpg",
     link: "https://www.facebook.com/sjp2cd.elites",
+  },
+];
+
+// Work Experience
+
+export const experience: Experience[] = [
+  {
+    organization: "OWWA (Overseas Workers Welfare Administration)",
+    role: "Intern - System Development & IT Solutions",
+    period: "Jan 2026–Present",
+    logo: "/logos/owwa-logo.png",
+    isCurrent: true,
   },
 ];
 
@@ -279,10 +291,11 @@ export const siteMetadata: SiteMetadata = {
 export const navItems = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "Work Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
 // Resume
 
-export const resumePath = "/resume.pdf";
+export const resumePath = "/KennethBulaga_FullStackDev_Jan2026.pdf";

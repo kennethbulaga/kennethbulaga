@@ -1,6 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Mail, Check, Copy } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { socialLinks, personalInfo } from "@/data/portfolio";
@@ -14,6 +15,17 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(personalInfo.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  };
 
   return (
     <motion.footer
@@ -39,40 +51,63 @@ export function Footer() {
           </p>
         </motion.div>
 
-        {/* Social Links */}
-        <div className="flex justify-center gap-4 mb-12">
-          {socialLinks.map((link) => {
-            const Icon = iconMap[link.platform] || Mail;
-            return (
-              <Button key={link.platform} variant="outline" size="icon" asChild>
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.platform}
-                >
-                  <Icon size={20} />
-                </a>
-              </Button>
-            );
-          })}
+        {/* External Profiles - GitHub & LinkedIn only */}
+        <div className="flex justify-center gap-4 mb-8">
+          {socialLinks
+            .filter((link) => link.platform !== "Email")
+            .map((link) => {
+              const Icon = iconMap[link.platform] || Mail;
+              return (
+                <Button key={link.platform} variant="outline" size="icon" asChild>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.platform}
+                  >
+                    <Icon size={20} />
+                  </a>
+                </Button>
+              );
+            })}
         </div>
 
-        {/* Email CTA */}
+        {/* Email CTA - Copy to Clipboard */}
         <div className="text-center mb-12">
-          <Button asChild size="lg" variant="default">
-            <a href={`mailto:${personalInfo.email}`} className="gap-2">
-              <Mail size={18} />
-              {personalInfo.email}
-            </a>
+          <Button
+            size="lg"
+            variant="default"
+            onClick={handleCopyEmail}
+            className="gap-2 transition-all"
+          >
+            {copied ? (
+              <>
+                <Check size={18} className="text-green-500" />
+                <span>Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy size={18} className="group-hover:opacity-70 transition-opacity" />
+                {personalInfo.email}
+              </>
+            )}
           </Button>
         </div>
 
         {/* Copyright */}
         <div className="text-center text-sm text-muted-foreground">
-          <p>
-            © {currentYear} {personalInfo.name}. Built with Next.js & Tailwind
-            CSS.
+          <p className="flex items-center justify-center gap-1 flex-wrap">
+            <span>© {currentYear} {personalInfo.name}.</span>
+            <a
+              href="https://github.com/kennethbulaga/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-foreground transition-colors underline-offset-4 hover:underline"
+            >
+              <Github size={14} />
+              Built with Next.js & Tailwind CSS
+            </a>
+            <span>.</span>
           </p>
         </div>
       </div>

@@ -10,7 +10,7 @@ import { fadeInUp } from "@/components/motion";
 export function Education() {
   return (
     <motion.section
-      id="experience"
+      id="education"
       className="py-12 sm:py-16 md:py-24 bg-muted/30"
       initial="hidden"
       whileInView="visible"
@@ -21,10 +21,10 @@ export function Education() {
         {/* Section Header */}
         <motion.div className="space-y-2 mb-8 sm:mb-12" variants={fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Experience
+            Education & Leadership
           </h2>
           <p className="text-muted-foreground">
-            Education and leadership roles.
+            Academic background and student leadership roles.
           </p>
         </motion.div>
 
