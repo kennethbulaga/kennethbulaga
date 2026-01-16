@@ -2,7 +2,7 @@
 
 My personal portfolio website showcasing projects, experience, and skills.
 
-**Live:** [kennethbulaga.vercel.app](https://kennethbulaga.vercel.app)
+**Live:** [kennethbulaga.dev](https://www.kennethbulaga.dev/)
 
 ## Built With
 
