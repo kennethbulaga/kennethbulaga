@@ -68,27 +68,44 @@ export function Experience() {
                     </div>
 
                     {/* Content */}
-                    <div className="space-y-1">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex-1 min-w-0">
-                          {/* Organization: Responsive - OWWA on mobile, full name on desktop */}
-                          <h4 className="font-semibold text-foreground text-sm">
-                            <span className="md:hidden">OWWA</span>
-                            <span className="hidden md:inline">
-                              {exp.organization}
+                    {(() => {
+                      const content = (
+                        <div className="space-y-1">
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex-1 min-w-0">
+                              {/* Organization: Responsive - OWWA RWO XI on mobile, full name on desktop */}
+                              <h4 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">
+                                <span className="md:hidden">OWWA RWO XI</span>
+                                <span className="hidden md:inline">
+                                  {exp.organization}
+                                </span>
+                              </h4>
+                              {/* Role */}
+                              <p className="text-sm text-muted-foreground mt-0.5">
+                                {exp.role}
+                              </p>
+                            </div>
+                            {/* Period: Always visible, no badge */}
+                            <span className="text-xs text-muted-foreground whitespace-nowrap shrink-0">
+                              {exp.period}
                             </span>
-                          </h4>
-                          {/* Role */}
-                          <p className="text-sm text-muted-foreground mt-0.5">
-                            {exp.role}
-                          </p>
+                          </div>
                         </div>
-                        {/* Period: Always visible, no badge */}
-                        <span className="text-xs text-muted-foreground whitespace-nowrap shrink-0">
-                          {exp.period}
-                        </span>
-                      </div>
-                    </div>
+                      );
+
+                      return exp.link ? (
+                        <a
+                          href={exp.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block group"
+                        >
+                          {content}
+                        </a>
+                      ) : (
+                        content
+                      );
+                    })()}
                   </li>
                 ))}
               </ul>

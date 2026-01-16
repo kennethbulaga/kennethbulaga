@@ -232,10 +232,11 @@ export const leadership: Leadership[] = [
 
 export const experience: Experience[] = [
   {
-    organization: "OWWA (Overseas Workers Welfare Administration)",
+    organization: "Overseas Workers Welfare Administration (OWWA) Region 11 — Davao Region",
     role: "Intern - System Development & IT Solutions",
     period: "Jan 2026–Present",
     logo: "/logos/owwa-logo.png",
+    link: "https://www.facebook.com/owwadavao.lco",
     isCurrent: true,
   },
 ];
