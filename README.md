@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://kennethbulaga.dev">
-    <img src="https://kennethbulaga.dev/opengraph-image.png" alt="Kenneth Bulaga — Full-Stack Developer" width="100%" />
+    <img src="https://kennethbulaga.dev/opengraph-image" alt="Kenneth Bulaga — Full-Stack Developer" width="100%" />
   </a>
   <br />
   <br />
